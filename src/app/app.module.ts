@@ -10,6 +10,8 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { ProductCartComponent } from './components/product-cart/product-cart.component';
 import { CartTotalComponent } from './components/cart-total/cart-total.component';
+import { ProductService } from './services/product.service';
+import { CartService } from './services/cart.service';
 
 @NgModule({
   schemas: [NO_ERRORS_SCHEMA],
@@ -28,7 +30,7 @@ import { CartTotalComponent } from './components/cart-total/cart-total.component
     AppRoutingModule,
     BrowserAnimationsModule,
   ],
-  providers: [],
+  providers: [ProductService, CartService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

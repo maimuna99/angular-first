@@ -4,10 +4,12 @@
     *ngFor="let product of data" 
     [data]="product">
         <mat-card-header>
+            <img mat-card-sm-image src={{product.image}} >
           <mat-card-title-group >
+            
             <mat-card-title>{{product.title}}</mat-card-title>
             <mat-card-subtitle>Price: {{product.price}}</mat-card-subtitle>
-            <img mat-card-sm-image src={{product.image}} >
+            
           </mat-card-title-group>
         </mat-card-header>
       </mat-card>
