@@ -1,7 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 // import { HttpClient } from '@angular/common/http';
 import { Product } from '../../interfaces/product.interface';
-import data from './data.json';
 
 @Component({
   selector: 'app-product-grid',
@@ -9,5 +8,5 @@ import data from './data.json';
   styleUrls: ['./product-grid.component.css'],
 })
 export class ProductGridComponent {
-  myData: Product[] = data;
+  @Input() myData: any;
 }

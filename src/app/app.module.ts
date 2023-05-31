@@ -7,11 +7,8 @@ import { ProductCardComponent } from './components/product-card/product-card.com
 import { ProductGridComponent } from './components/product-grid/product-grid.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatGridListModule } from '@angular/material/grid-list';
-import { FlexLayoutModule } from '@angular/flex-layout';
 import { ProductCartComponent } from './components/product-cart/product-cart.component';
 import { CartTotalComponent } from './components/cart-total/cart-total.component';
-import { ProductService } from './services/product.service';
-import { CartService } from './services/cart.service';
 
 @NgModule({
   schemas: [NO_ERRORS_SCHEMA],
@@ -24,13 +21,11 @@ import { CartService } from './services/cart.service';
   ],
   imports: [
     MatCardModule,
-    FlexLayoutModule,
     MatGridListModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
   ],
-  providers: [ProductService, CartService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
