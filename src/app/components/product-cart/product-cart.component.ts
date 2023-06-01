@@ -1,7 +1,8 @@
 import { Component, Input } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Product } from '../../interfaces/product.interface';
+import { CartItem } from '../../interfaces/cart.interface';
 import { StoreService } from 'src/app/services/store.service';
+import { Product } from 'src/app/interfaces/product.interface';
 
 @Component({
   selector: 'app-product-cart',
@@ -10,8 +11,8 @@ import { StoreService } from 'src/app/services/store.service';
 })
 export class ProductCartComponent {
   @Input()
-  data!: Observable<Product[]>;
-  cartItems$: Observable<Product[]>;
+  data!: Observable<CartItem[]>;
+  cartItems$: Observable<CartItem[]>;
   total$: Observable<number>;
 
   constructor(private storeService: StoreService) {
