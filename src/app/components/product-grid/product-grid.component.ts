@@ -1,12 +1,13 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 // import { HttpClient } from '@angular/common/http';
 import { Product } from '../../interfaces/product.interface';
-
+import { StoreService } from '../../services/store.service';
+import { Observable } from 'rxjs';
 @Component({
   selector: 'app-product-grid',
   templateUrl: './product-grid.component.html',
   styleUrls: ['./product-grid.component.css'],
 })
 export class ProductGridComponent {
-  @Input() myData: any;
+  @Input() gridproducts$!: Observable<Product[]>;
 }

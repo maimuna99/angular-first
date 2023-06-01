@@ -1,11 +1,11 @@
-<div fxLayout="row wrap">
+<div class="main">
   <div class="catalogue">
-    <h1 >Online Shop</h1>
-    <app-product-grid [data]="product"></app-product-grid>
+    <h1>Online Shop</h1>
+    <app-product-grid [gridproducts$]="products$"></app-product-grid>
   </div>
- <div class="cart">
-  <h1>Shopping Cart</h1>
-  <app-product-cart [data]="product"></app-product-cart>
-  <app-cart-total></app-cart-total>
- </div>
+  <div class="cart">
+    <h1>Shopping Cart</h1>
+    <app-product-cart [data]="cartItems$"></app-product-cart>
+    <p>Total: {{ total$ | async | currency }}</p>
+  </div>
 </div>
