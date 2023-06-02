@@ -9,6 +9,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { ProductCartComponent } from './components/product-cart/product-cart.component';
 import { CartTotalComponent } from './components/cart-total/cart-total.component';
 import { FilterPipe } from './shared/filter.pipe';
+import {NgxPaginationModule} from 'ngx-pagination';
 
 @NgModule({
   schemas: [NO_ERRORS_SCHEMA],
@@ -21,6 +22,7 @@ import { FilterPipe } from './shared/filter.pipe';
     FilterPipe,
   ],
   imports: [
+    NgxPaginationModule,
     MatCardModule,
     MatGridListModule,
     BrowserModule,

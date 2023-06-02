@@ -4,7 +4,7 @@ import { Pipe, PipeTransform } from '@angular/core';
   name: 'filter',
 })
 export class FilterPipe implements PipeTransform {
-  transform(value: any[], filterString: string, propName: string): any[] {
+  transform(value: any, filterString: string, propName: string): any[] {
     const result: any = [];
     if (!value || filterString === '' || propName === '') {
       return value;

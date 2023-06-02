@@ -2,9 +2,10 @@
     <div  class="container">
       <app-product-card
         
-        *ngFor="let product of (gridproducts$ | async) filter:searchKey, 'title'"
+        *ngFor="let product of( (gridproducts$ | async ) | filter:searchKey:'title' |  paginate: { itemsPerPage: 3, currentPage: p }  )"
         [data]="product"
       ></app-product-card>
+      <pagination-controls (pageChange)="p = $event"></pagination-controls>
     </div>
   </div>
   

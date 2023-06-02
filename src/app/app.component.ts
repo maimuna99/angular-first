@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Product } from '../app/interfaces/product.interface';
 import { StoreService } from './services/store.service';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { CartItem } from './interfaces/cart.interface';
 
 @Component({
@@ -12,7 +12,8 @@ import { CartItem } from './interfaces/cart.interface';
 export class AppComponent {
   title = 'hw1';
 
-  products$: Observable<Product[]>;
+  // products$: Observable<Product[]>;
+  products$: Observable<Product[]> = of<Product[]>([]);
   cartItems$: Observable<CartItem[]>;
   total$: Observable<number>;
 
