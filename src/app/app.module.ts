@@ -12,6 +12,7 @@ import { FilterPipe } from './shared/filter.pipe';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { HeaderComponent } from './components/header/header.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { TabsComponent } from './components/tabs/tabs.component';
 @NgModule({
   schemas: [NO_ERRORS_SCHEMA],
   declarations: [
@@ -22,6 +23,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     CartTotalComponent,
     FilterPipe,
     HeaderComponent,
+    TabsComponent,
   ],
   imports: [
     FormsModule,
