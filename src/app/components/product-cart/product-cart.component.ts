@@ -1,8 +1,9 @@
-import { Component, Input } from '@angular/core';
+import { Component, InjectionToken, Input } from '@angular/core';
 import { Observable } from 'rxjs';
 import { CartItem } from '../../interfaces/cart.interface';
 import { StoreService } from 'src/app/services/store.service';
 import { Product } from 'src/app/interfaces/product.interface';
+import { DOCUMENT } from '@angular/common';
 
 @Component({
   selector: 'app-product-cart',
@@ -20,7 +21,11 @@ export class ProductCartComponent {
     this.total$ = this.storeService.total$;
   }
 
+ 
+
   removeItemFromCart(product: Product): void {
     this.storeService.removeItemFromCart(product);
   }
 }
+
+

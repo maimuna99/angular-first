@@ -1,5 +1,5 @@
 <div *ngIf="(data | async)?.length != 0">
-  <mat-card fxLayoutAlign="left auto" *ngFor="let item of (data | async)">
+  <mat-card  *ngFor="let item of (data | async)">
     <mat-card-header>
       <img mat-card-sm-image src="{{ item.product.image }}">
       <mat-card-title-group>
