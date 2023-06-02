@@ -9,5 +9,7 @@ import { Observable } from 'rxjs';
   styleUrls: ['./product-grid.component.css'],
 })
 export class ProductGridComponent {
-  @Input() gridproducts$!: Observable<Product[]>;
+  @Input() gridproducts$: Observable<Product[]> | null = null;
+
+  searchKey: string = '';
 }

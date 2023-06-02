@@ -9,6 +9,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { ProductCartComponent } from './components/product-cart/product-cart.component';
 import { CartTotalComponent } from './components/cart-total/cart-total.component';
+import { FilterPipe } from './shared/filter.pipe';
 
 @NgModule({
   schemas: [NO_ERRORS_SCHEMA],
@@ -18,6 +19,7 @@ import { CartTotalComponent } from './components/cart-total/cart-total.component
     ProductGridComponent,
     ProductCartComponent,
     CartTotalComponent,
+    FilterPipe,
   ],
   imports: [
     MatCardModule,
