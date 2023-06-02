@@ -1,4 +1,8 @@
-.outerContainer{
+.container{
     background-color: rgba(213, 213, 213, 0.198);
+    display: flex;
+    flex-direction: row ;
+    flex-wrap: wrap ;
+    justify-content: flex-start;
      }
     

@@ -9,8 +9,9 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { ProductCartComponent } from './components/product-cart/product-cart.component';
 import { CartTotalComponent } from './components/cart-total/cart-total.component';
 import { FilterPipe } from './shared/filter.pipe';
-import {NgxPaginationModule} from 'ngx-pagination';
-
+import { NgxPaginationModule } from 'ngx-pagination';
+import { HeaderComponent } from './components/header/header.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   schemas: [NO_ERRORS_SCHEMA],
   declarations: [
@@ -20,8 +21,11 @@ import {NgxPaginationModule} from 'ngx-pagination';
     ProductCartComponent,
     CartTotalComponent,
     FilterPipe,
+    HeaderComponent,
   ],
   imports: [
+    FormsModule,
+    ReactiveFormsModule,
     NgxPaginationModule,
     MatCardModule,
     MatGridListModule,
