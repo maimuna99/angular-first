@@ -9,7 +9,7 @@ import { CartItem } from '../interfaces/cart.interface';
 })
 export class StoreService {
   private cartItemsSubject = new BehaviorSubject<CartItem[]>([]);
-
+  public search = new BehaviorSubject<string>('');
   cartItems$ = this.cartItemsSubject.asObservable();
   products$ = ajax.getJSON<Product[]>('/assets/data.json');
 

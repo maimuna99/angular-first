@@ -13,4 +13,12 @@ export class ProductGridComponent {
 
   p: number = 1;
   searchKey: string = '';
+
+  constructor(private storeService: StoreService) {}
+
+  ngOnInit(): void {
+    this.storeService.search.subscribe((val: any) => {
+      this.searchKey = val;
+    });
+  }
 }
