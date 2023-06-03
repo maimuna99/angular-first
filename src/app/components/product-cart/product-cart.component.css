@@ -1,0 +1,154 @@
+
+@mixin box-shadow {
+  -webkit-box-shadow: -1px 5px 18px -7px rgba(0,0,0,0.75);
+  -moz-box-shadow: -1px 5px 18px -7px rgba(0,0,0,0.75);
+  box-shadow: -1px 5px 18px -7px rgba(0,0,0,0.75);
+}
+
+@mixin media-query-max($width) {
+    @media screen and (max-width: $width) {
+        @content;
+    }
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  background: $grey;
+}
+
+input + label {
+  margin: 0.4em;
+}
+
+button {
+  outline: none;
+}
+
+li {
+  list-style: none;
+}
+
+.wrapper {
+  max-width: 1600px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.panel__list {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  @include media-query-max(920px) {
+    flex-flow: column;
+  }
+  @include media-query-max(1340px) {
+    justify-content: flex-start;
+    align-content: stretch;
+  }
+}
+
+.panel {
+  display: flex;
+  flex-flow: row;
+  background: $white;
+  border-radius: 0.4em;
+  padding: 1.3em;
+  @include box-shadow;
+    flex-basis: 33%;
+    margin: 0.5em;
+  @include media-query-max(1340px) {
+    flex-basis: 49%;
+    margin: 0.2em;
+  }
+  @include media-query-max(600px) {
+    flex-flow: row wrap;
+  }
+}
+
+.panel__img {
+  flex-basis: 15%;
+  @include media-query-max(600px) {
+    flex-basis: 100%;
+  }
+}
+
+.panel img {
+  width: 150px;
+  height: 150px;
+  background: $grey;
+  @include media-query-max(600px) {
+    width: 100%;
+  }
+}
+.panel__content {
+  flex-basis: 100%;
+  padding: 0 1.2em;
+  @include media-query-max(600px) {
+    padding: 0.8em 0 0;
+  }
+}
+
+.panel__content--header h2 {
+ color: $dark-grey;
+}
+
+.panel__content--header p {
+  padding-top: 0.4em;
+  color: $light-grey;
+}
+
+.panel__content--options {
+  display: flex;
+  flex-direction: column;
+  color: $dark-grey;
+}
+
+.checkboxes {
+  display: flex;
+}
+
+.panel__content--action {
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-0.6em);
+}
+
+.checkboxes:not(:last-child) {
+  padding-bottom: 0.5em;
+}
+
+.panel__content .item {
+ padding-bottom: 1em;
+}
+
+.price {
+  font-size: 1.6em;
+  font-weight: bold;
+  color: $yellow;
+  align-self: flex-start;
+}
+
+.btn__add-to-cart {
+  padding: 0.6em 2em;
+  border-radius: 4em;
+  background: $blue;
+  color: $white;
+  font-size: 14px;
+  text-align: center;
+  align-self: flex-end;
+}
+
+button {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  font-family: inherit;
+  font-size: 1em;
+  cursor: pointer;
+}
