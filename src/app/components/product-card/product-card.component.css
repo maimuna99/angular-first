@@ -24,7 +24,7 @@ button {
   outline: none;
   border-radius: 0.2rem;
   color: var(--text);
-  background-color: var(--btn);
+  background-color: #FFE5CA;
   cursor: pointer;
 }
 
@@ -94,7 +94,7 @@ img {
   background-color: var(--btn);
 }
 .buy-btn {
-  background-color: var(--btn);
+  background-color: #FFE5CA;
   padding: 0.6rem 3.5rem;
   font-weight: 600;
   font-size: 1rem;
@@ -103,23 +103,7 @@ img {
 .buy-btn:hover {
   background-color: var(--btn-hover);
 }
-.fav {
-  box-sizing: border-box;
-  background: #fff;
-  padding: 0.5rem 0.5rem;
-  border: 1px solid#000;
-  display: grid;
-  place-items: center;
-}
 
-.svg {
-  height: 25px;
-  width: 25px;
-  fill: #fff;
-  transition: all 500ms ease;
-}
 
-.fav:hover .svg {
-  fill: #000;
-}
+
 
