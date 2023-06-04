@@ -16,20 +16,23 @@
 <div *ngIf="(data | async)?.length === 0">Cart is empty</div> -->
 <main class="wrapper" *ngIf="(data | async)?.length != 0">
   <div class="panel__list" *ngFor="let item of (data | async)">
-
+    <hr class="line">
 <div class="panel">
-  <div class="panel__img"><img src="{{ item.product.image }}" /></div>
   <div class="panel__content">
+    <img class="panel__img" src="{{ item.product.image }}" />
     <div class="panel__content--header item">
       <h2>{{ item.product.title }}</h2>
-      <p>description lorem ipsum dolor ...</p>
+      <p>Quantity: {{ item.quantity }}</p>
+      <p class="price">Price: {{ item.product.price }}</p>
     </div>
    
     <div class="panel__content--action">
-      <span class="price">$200</span>
-      <button class="btn__add-to-cart">ADD TO CART</button>
+    
+      <button class="btn__add-to-cart" (click)="removeItemFromCart(item.product)">Remove</button>
+      
     </div>
   </div>
+  <hr class="line">
 </div>
 
   </div>
