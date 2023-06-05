@@ -14,6 +14,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TabsComponent } from './components/tabs/tabs.component';
 import { TermsModule } from './terms/terms.module';
+import { RouterModule } from '@angular/router';
 @NgModule({
   schemas: [NO_ERRORS_SCHEMA],
   declarations: [
@@ -33,6 +34,7 @@ import { TermsModule } from './terms/terms.module';
     MatCardModule,
     MatGridListModule,
     BrowserModule,
+    RouterModule,
     TermsModule,
     BrowserAnimationsModule,
   ],

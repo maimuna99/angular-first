@@ -1,9 +1,12 @@
 <div >
   <app-header></app-header>
   <div class="main">
-    <router-outlet></router-outlet>
+    
+    
   <div class="catalogue">
     <app-tabs></app-tabs>
+    <a routerLink="/terms">Terms of use</a>
+    <router-outlet></router-outlet>
     <app-product-grid [gridproducts$]="products$"></app-product-grid>
   </div>
   <div class="cart">
