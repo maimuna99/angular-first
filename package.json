@@ -16,6 +16,7 @@
     "@angular/material": "^16.0.3",
     "@angular/platform-browser": "^16.0.4",
     "@angular/platform-browser-dynamic": "^16.0.4",
+    "@angular/router": "^16.0.4",
     "angular-br-filters": "^0.7.0",
     "babel": "^6.5.2",
     "babel-preset-es2015": "^6.18.0",

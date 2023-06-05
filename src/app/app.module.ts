@@ -13,6 +13,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { HeaderComponent } from './components/header/header.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TabsComponent } from './components/tabs/tabs.component';
+import { TermsModule } from './terms/terms.module';
 @NgModule({
   schemas: [NO_ERRORS_SCHEMA],
   declarations: [
@@ -32,6 +33,7 @@ import { TabsComponent } from './components/tabs/tabs.component';
     MatCardModule,
     MatGridListModule,
     BrowserModule,
+    TermsModule,
     BrowserAnimationsModule,
   ],
   bootstrap: [AppComponent],
