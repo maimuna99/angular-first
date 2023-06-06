@@ -18,3 +18,25 @@ justify-content: flex-start;
     display: flex;
     flex-direction: row ;
 }
+
+.btn__Checkout {
+    padding: 0.6em;
+    margin: 5px;
+    border-radius: 2px;
+    background: #E74646;
+    color:white;
+    font-size: 14px;
+    text-decoration: b;
+    text-align: center;
+    align-self: flex-end;
+  }
+  
+  button {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    font-family: inherit;
+    font-size: 1em;
+    cursor: pointer;
+  }

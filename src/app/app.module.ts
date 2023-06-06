@@ -7,7 +7,7 @@ import { ProductGridComponent } from './components/product-grid/product-grid.com
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { ProductCartComponent } from './components/product-cart/product-cart.component';
-import { CartTotalComponent } from './components/cart-total/cart-total.component';
+// import { CartTotalComponent } from './components/cart-total/cart-total.component';
 import { FilterPipe } from './shared/filter.pipe';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { HeaderComponent } from './components/header/header.component';
@@ -27,7 +27,6 @@ import { TestComponent } from './test/test.component';
     ProductCardComponent,
     ProductGridComponent,
     ProductCartComponent,
-    CartTotalComponent,
     FilterPipe,
     HeaderComponent,
     TabsComponent,

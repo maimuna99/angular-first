@@ -1,4 +1,3 @@
-<p>mainstore works!</p>
 <div class="main">
   <div class="catalogue">
     <router-outlet></router-outlet>
@@ -9,5 +8,6 @@
     <h1 class="panel__content--header item">Shopping Cart</h1>
     <app-product-cart [data]="cartItems$"></app-product-cart>
     <p>Total: {{ total$ | async | currency }}</p>
+    <button routerLink="/checkout" class="btn__Checkout">Checkout</button>
   </div>
 </div>
