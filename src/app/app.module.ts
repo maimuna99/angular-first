@@ -19,6 +19,7 @@ import { MainstoreComponent } from './components/mainstore/mainstore.component';
 import { SuccessComponent } from './components/success/success.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
 import { TestComponent } from './test/test.component';
+
 @NgModule({
   schemas: [NO_ERRORS_SCHEMA],
   declarations: [

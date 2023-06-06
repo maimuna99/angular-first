@@ -1,1 +1,33 @@
 <p>checkout works!</p>
+<form [formGroup]="checkoutForm">
+  <div class="form-group">
+    <label>First Name</label>
+    <input type="firstName" formControlName="firstName" class="form-control" placeholder="First Name" />
+  </div>
+  <div class="form-group">
+    <label>Last Name</label>
+    <input type="lastName" formControlName="lastName" class="form-control" placeholder="Last Name" />
+  </div>
+  <div class="form-group">
+    <label>Email address</label>
+    <input type="email" formControlName="email" class="form-control" placeholder="Enter email" />
+  </div>
+  <div class="form-group">
+    <label>Country</label>
+    <input type="country" formControlName="country" class="form-control" placeholder="Country" />
+  </div>
+  <div class="form-group">
+    <label>Address</label>
+    <input type="address" formControlName="address" class="form-control" placeholder="Address" />
+  </div>
+  <div class="form-group">
+    <label>Zip Code</label>
+    <input type="zipCode" formControlName="zipCode" class="form-control" placeholder="Zip Code" />
+  </div>
+  <div class="form-group">
+    <label>State</label>
+    <input type="state" formControlName="state" class="form-control" placeholder="State" />
+  </div>
+  <!-- Add checkbox here  -->
+  <button type="submit" class="btn btn-primary" routerLink="/success">Submit</button>
+</form>
