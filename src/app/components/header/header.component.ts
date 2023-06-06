@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { StoreService } from '../../services/store.service';
+import { ProductGridComponent } from '../product-grid/product-grid.component';
 
 @Component({
   selector: 'app-header',

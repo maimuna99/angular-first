@@ -17,7 +17,6 @@ import { TermsModule } from './terms/terms.module';
 import { RouterModule } from '@angular/router';
 import { MainstoreComponent } from './components/mainstore/mainstore.component';
 import { SuccessComponent } from './components/success/success.component';
-import { ChildComponent } from './child/child.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
 @NgModule({
   schemas: [NO_ERRORS_SCHEMA],
@@ -32,7 +31,6 @@ import { CheckoutComponent } from './components/checkout/checkout.component';
     TabsComponent,
     MainstoreComponent,
     SuccessComponent,
-    ChildComponent,
     CheckoutComponent,
   ],
   imports: [
