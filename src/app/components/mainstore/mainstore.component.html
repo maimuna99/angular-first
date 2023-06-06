@@ -1,0 +1,15 @@
+<p>mainstore works!</p>
+<div class="main">
+  <div class="catalogue">
+    <router-outlet></router-outlet>
+    <app-tabs></app-tabs>
+    <!-- <a routerLink="/terms">Terms of use</a>
+    <router-outlet></router-outlet> -->
+    <app-product-grid [gridproducts$]="products$"></app-product-grid>
+  </div>
+  <div class="cart">
+    <h1 class="panel__content--header item">Shopping Cart</h1>
+    <app-product-cart [data]="cartItems$"></app-product-cart>
+    <p>Total: {{ total$ | async | currency }}</p>
+  </div>
+</div>

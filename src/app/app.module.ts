@@ -15,6 +15,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TabsComponent } from './components/tabs/tabs.component';
 import { TermsModule } from './terms/terms.module';
 import { RouterModule } from '@angular/router';
+import { MainstoreComponent } from './components/mainstore/mainstore.component';
+import { SuccessComponent } from './components/success/success.component';
+import { ChildComponent } from './child/child.component';
+import { CheckoutComponent } from './components/checkout/checkout.component';
 @NgModule({
   schemas: [NO_ERRORS_SCHEMA],
   declarations: [
@@ -26,6 +30,10 @@ import { RouterModule } from '@angular/router';
     FilterPipe,
     HeaderComponent,
     TabsComponent,
+    MainstoreComponent,
+    SuccessComponent,
+    ChildComponent,
+    CheckoutComponent,
   ],
   imports: [
     FormsModule,

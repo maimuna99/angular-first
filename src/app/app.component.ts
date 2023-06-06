@@ -13,17 +13,17 @@ export class AppComponent {
   title = 'hw1';
 
   // products$: Observable<Product[]>;
-  products$: Observable<Product[]> = of<Product[]>([]);
-  cartItems$: Observable<CartItem[]>;
-  total$: Observable<number>;
+  // products$: Observable<Product[]> = of<Product[]>([]);
+  // cartItems$: Observable<CartItem[]>;
+  // total$: Observable<number>;
 
-  constructor(private storeService: StoreService) {
-    this.products$ = this.storeService.products$;
-    this.cartItems$ = this.storeService.cartItems$;
-    this.total$ = this.storeService.total$;
-  }
+  // constructor(private storeService: StoreService) {
+  //   this.products$ = this.storeService.products$;
+  //   this.cartItems$ = this.storeService.cartItems$;
+  //   this.total$ = this.storeService.total$;
+  // }
 
-  addItemToCart(product: Product): void {
-    this.storeService.addItemToCart(product);
-  }
+  // addItemToCart(product: Product): void {
+  //   this.storeService.addItemToCart(product);
+  // }
 }
