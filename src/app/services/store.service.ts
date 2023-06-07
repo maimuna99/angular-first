@@ -1,8 +1,9 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Inject } from '@angular/core';
 import { ajax } from 'rxjs/ajax';
 import { Observable, BehaviorSubject, map } from 'rxjs';
 import { Product } from '../interfaces/product.interface';
 import { CartItem } from '../interfaces/cart.interface';
+import { DATA_PATH } from '../settings/app.settings';
 
 @Injectable({
   providedIn: 'root',
@@ -11,13 +12,20 @@ export class StoreService {
   private cartItemsSubject = new BehaviorSubject<CartItem[]>([]);
   public search = new BehaviorSubject<string>('');
   cartItems$ = this.cartItemsSubject.asObservable();
-  products$ = ajax.getJSON<Product[]>('/assets/data.json');
+  products$: Observable<Product[]>;
 
   total$ = this.cartItems$.pipe(
     map((items) =>
       items.reduce((acc, item) => acc + item.product.price * item.quantity, 0)
     )
   );
+
+  constructor(
+    @Inject(DATA_PATH)
+    public dataPath: string
+  ) {
+    this.products$ = ajax.getJSON<Product[]>(dataPath);
+  }
 
   addItemToCart(product: Product): void {
     const currentItems = this.cartItemsSubject.getValue();

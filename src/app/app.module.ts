@@ -7,7 +7,6 @@ import { ProductGridComponent } from './components/product-grid/product-grid.com
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { ProductCartComponent } from './components/product-cart/product-cart.component';
-// import { CartTotalComponent } from './components/cart-total/cart-total.component';
 import { FilterPipe } from './shared/filter.pipe';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { HeaderComponent } from './components/header/header.component';
@@ -19,6 +18,8 @@ import { MainstoreComponent } from './components/mainstore/mainstore.component';
 import { SuccessComponent } from './components/success/success.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
 import { TestComponent } from './test/test.component';
+import { DATA_PATH } from './settings/app.settings';
+import { dataPath } from './settings';
 
 @NgModule({
   schemas: [NO_ERRORS_SCHEMA],
@@ -45,6 +46,12 @@ import { TestComponent } from './test/test.component';
     RouterModule,
     TermsModule,
     BrowserAnimationsModule,
+  ],
+  providers: [
+    {
+      provide: DATA_PATH,
+      useValue: dataPath,
+    },
   ],
   bootstrap: [AppComponent],
 })
