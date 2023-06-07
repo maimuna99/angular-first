@@ -18,8 +18,8 @@ import { MainstoreComponent } from './components/mainstore/mainstore.component';
 import { SuccessComponent } from './components/success/success.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
 import { TestComponent } from './test/test.component';
-import { DATA_PATH } from './settings/app.settings';
-import { dataPath } from './settings';
+import { APP_SETTINGS } from './settings/app.settings';
+import { appSettings } from './settings';
 
 @NgModule({
   schemas: [NO_ERRORS_SCHEMA],
@@ -49,8 +49,8 @@ import { dataPath } from './settings';
   ],
   providers: [
     {
-      provide: DATA_PATH,
-      useValue: dataPath,
+      provide: APP_SETTINGS,
+      useValue: appSettings,
     },
   ],
   bootstrap: [AppComponent],

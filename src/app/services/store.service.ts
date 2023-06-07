@@ -3,7 +3,7 @@ import { ajax } from 'rxjs/ajax';
 import { Observable, BehaviorSubject, map } from 'rxjs';
 import { Product } from '../interfaces/product.interface';
 import { CartItem } from '../interfaces/cart.interface';
-import { DATA_PATH } from '../settings/app.settings';
+import { APP_SETTINGS } from '../settings/app.settings';
 
 @Injectable({
   providedIn: 'root',
@@ -20,11 +20,8 @@ export class StoreService {
     )
   );
 
-  constructor(
-    @Inject(DATA_PATH)
-    public dataPath: string
-  ) {
-    this.products$ = ajax.getJSON<Product[]>(dataPath);
+  constructor(@Inject(APP_SETTINGS) private appSettings: any) {
+    this.products$ = ajax.getJSON<Product[]>(this.appSettings.dataSourceURL);
   }
 
   addItemToCart(product: Product): void {
