@@ -20,6 +20,7 @@ import { CheckoutComponent } from './components/checkout/checkout.component';
 import { TestComponent } from './test/test.component';
 import { APP_SETTINGS } from './settings/app.settings';
 import { appSettings } from './settings';
+import { ProductGridHandlerComponent } from './product-grid-handler/product-grid-handler.component';
 
 @NgModule({
   schemas: [NO_ERRORS_SCHEMA],
@@ -35,6 +36,7 @@ import { appSettings } from './settings';
     SuccessComponent,
     CheckoutComponent,
     TestComponent,
+    ProductGridHandlerComponent,
   ],
   imports: [
     FormsModule,

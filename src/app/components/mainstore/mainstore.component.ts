@@ -11,12 +11,12 @@ import { CartItem } from '../../interfaces/cart.interface';
 })
 export class MainstoreComponent {
   //products$: Observable<Product[]>;
-  products$: Observable<Product[]> = of<Product[]>([]);
+  // products$: Observable<Product[]> = of<Product[]>([]);
   cartItems$: Observable<CartItem[]>;
   total$: Observable<number>;
 
   constructor(private storeService: StoreService) {
-    this.products$ = this.storeService.products$;
+    // this.products$ = this.storeService.products$;
     this.cartItems$ = this.storeService.cartItems$;
     this.total$ = this.storeService.total$;
   }
