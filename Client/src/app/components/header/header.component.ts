@@ -9,6 +9,7 @@ import { ProductGridComponent } from '../childrenComponents/mainstore/childrenCo
 })
 export class HeaderComponent {
   public searchTerm: string = '';
+  public catTerm: string | undefined;
 
   constructor(private storeService: StoreService) {}
 
@@ -16,5 +17,11 @@ export class HeaderComponent {
     this.searchTerm = (event.target as HTMLInputElement).value;
     console.log(this.searchTerm);
     this.storeService.search.next(this.searchTerm);
+  }
+
+  filterCat(event: any) {
+    this.catTerm = (event.target as HTMLInputElement).value;
+    console.log(this.catTerm);
+    this.storeService.search.next(this.catTerm);
   }
 }

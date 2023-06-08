@@ -1,0 +1,19 @@
+<div class="header">
+  <img class="logo" src="../../../assets/logo.png" />
+  <div class="search">
+    <input
+      type="text"
+      class="form-control"
+      [(ngModel)]="searchTerm"
+      (keyup)="search($event)"
+      placeholder="Search Products..."
+    />
+  </div>
+  <!-- <button><a [(ngModel)]="catTerm" (click)="filterCat('')">Main</a></button>
+  <button>
+    <a [(ngModel)]="catTerm" (keyup)="filterCat('men')">Men</a>
+  </button>
+  <button>
+    <a [(ngModel)]="catTerm" (keyup)="filterCat('jewelery')">Jewelery</a>
+  </button> -->
+</div>

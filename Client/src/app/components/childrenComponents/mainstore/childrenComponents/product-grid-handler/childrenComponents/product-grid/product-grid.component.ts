@@ -3,7 +3,7 @@ import { Product } from '../../../../../../../interfaces/product.interface';
 import { StoreService } from '../../../../../../../services/store.service';
 import { Observable, of } from 'rxjs';
 import { Inject } from '@angular/core';
-import { APP_SETTINGS } from 'src/app/settings/app.settings';
+import { APP_SETTINGS } from 'Client/src/app/settings/app.settings';
 
 @Component({
   selector: 'app-product-grid',
