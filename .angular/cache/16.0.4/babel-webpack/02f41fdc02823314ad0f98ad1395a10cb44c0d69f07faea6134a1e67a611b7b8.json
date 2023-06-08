@@ -1,1 +1,0 @@
-{"ast":null,"code":"export const dataPath = '../../assets/data.json';","map":{"version":3,"names":["dataPath"],"sources":["/Users/maimunawahaibi/Desktop/angular-first/src/app/settings/index.ts"],"sourcesContent":["export const dataPath = '../../assets/data.json';\n"],"mappings":"AAAA,OAAO,MAAMA,QAAQ,GAAG,wBAAwB"},"metadata":{},"sourceType":"module","externalDependencies":[]}
