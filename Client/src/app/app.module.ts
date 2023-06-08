@@ -24,9 +24,8 @@ import { appSettings } from './settings';
 import { ProductGridHandlerComponent } from './components/childrenComponents/mainstore/childrenComponents/product-grid-handler/product-grid-handler.component';
 import { Observable, of } from 'rxjs';
 import { Product } from './interfaces/product.interface';
-// import { appInitializerProviders } from './app-initializer';
 
-function initializeAppFactory(
+export function initializeAppFactory(
   httpClient: HttpClient
 ): () => Observable<Product[]> {
   const products$ = httpClient.get<Product[]>(

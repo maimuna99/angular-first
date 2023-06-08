@@ -1,8 +1,8 @@
 import { Component, InjectionToken, Input } from '@angular/core';
 import { Observable } from 'rxjs';
 import { CartItem } from '../../interfaces/cart.interface';
-import { StoreService } from 'Client/src/app/services/store.service';
-import { Product } from 'Client/src/app/interfaces/product.interface';
+import { StoreService } from '../../services/store.service';
+import { Product } from '../../interfaces/product.interface';
 import { DOCUMENT } from '@angular/common';
 
 @Component({
