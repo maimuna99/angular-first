@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { StoreService } from '../../services/store.service';
-import { ProductGridComponent } from '../product-grid/product-grid.component';
+import { ProductGridComponent } from '../childrenComponents/mainstore/childrenComponents/product-grid-handler/childrenComponents/product-grid/product-grid.component';
 
 @Component({
   selector: 'app-header',
@@ -9,9 +9,8 @@ import { ProductGridComponent } from '../product-grid/product-grid.component';
 })
 export class HeaderComponent {
   public searchTerm: string = '';
-  
 
-  constructor(private storeService: StoreService){}
+  constructor(private storeService: StoreService) {}
 
   search(event: any) {
     this.searchTerm = (event.target as HTMLInputElement).value;
