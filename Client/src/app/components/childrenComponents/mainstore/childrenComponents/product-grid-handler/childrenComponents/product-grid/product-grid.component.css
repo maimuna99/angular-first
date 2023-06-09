@@ -8,4 +8,12 @@
     padding-top: 80px;
     padding-bottom: 80px;
      }
-    
+   
+     .pagination{
+        margin-left: 200px;
+     }
+     .pagination ::ng-deep .ngx-pagination .current {
+        background:  #E74646;
+        align-content: center;
+        
+    }

@@ -6,24 +6,52 @@
 .panel__content {
   display: flex;
 }
-.line{
-  box-sizing: border-box;
-  border: 1px solid;
-  border-color: grey;
+
+.wrapper{
+  margin: 10px;
+  align-self: center;
 }
+
+.wrapper h2{
+  align-self: center;
+  display: flex;
+}
+
 .panel__content--action {
   display: flex;
   justify-content: right;
  
 }
-
-
+.img{
+  width: 300px;
+  height: 300px;
+  padding-left: 40px;
+}
+.card {
+  align-self: center;
+  padding: 2px;
+  max-width: 100%;
+  position: relative;
+  padding: 1rem;
+  width: 400px;
+  height: 150px;
+  box-shadow: -1px 15px 30px -12px rgb(32, 32, 32);
+  border-radius: 0.9rem;
+  background-color: white;
+  cursor: pointer;
+}
+.card-image {
+  height: 100px;
+}
 
 .price {
   font-size: 17px;
   align-self: flex-start;
 }
-
+h2{
+  color: #E74646;
+  justify-content: center;
+}
 .btn__add-to-cart {
   padding: 0.6em;
   margin: 5px;

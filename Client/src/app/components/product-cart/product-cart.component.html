@@ -1,9 +1,8 @@
 <main class="wrapper" *ngIf="(data | async)?.length != 0">
   <div class="panel__list" *ngFor="let item of (data | async)">
-    <hr class="line">
-<div class="panel">
+<div class="card">
   <div class="panel__content">
-    <img class="panel__img" src="{{ item.product.image }}" />
+    <img class="card-image " src="{{ item.product.image }}" />
     <div class="panel__content--header item">
       <h2>{{ item.product.title }}</h2>
       <p>Quantity: {{ item.quantity }}</p>
@@ -16,11 +15,12 @@
       
     </div>
   </div>
-  <hr class="line">
 </div>
 
   </div>
 </main>
 <main class="wrapper" *ngIf="(data | async)?.length === 0">
-  Cart is empty
+  <h2>Your Cart is empty</h2>
+  <img  class="img" src="../../../assets//empty.png"/>
+  
 </main>

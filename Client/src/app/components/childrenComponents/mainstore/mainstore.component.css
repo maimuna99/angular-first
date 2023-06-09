@@ -5,7 +5,17 @@ flex-direction: column ;
 flex-wrap: wrap ;
 justify-content: flex-start;
 }
+.panel{
+    margin: 30px;
+    align-self: center;
+}
 
+.total{
+    margin: 30px;
+    align-self: center;
+    text-decoration: bold;
+    color: brown;
+}
 .cart{
     width: 30%;
     display: flex;
@@ -40,3 +50,4 @@ justify-content: flex-start;
     font-size: 1em;
     cursor: pointer;
   }
+

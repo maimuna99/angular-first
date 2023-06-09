@@ -23,6 +23,8 @@
   }
 
   .success{
+    align-self: center;
+    display: flex;
     width: 400px;
     height:400px;
     margin: auto;
@@ -32,17 +34,22 @@
   }
 
   div{
+      align-self: center;
   background-color: antiquewhite;
   margin: auto;
   width: 50%;
-  padding: 10px;
   align-self: center;
-  margin-top: 90px;
+  margin-top: 70px;
   border-radius: 2%;
   }
 
-
-
+.buttons{
+  align-self: center;
+  display: flex;
+}
+.notify{
+  color:#E74646;
+}
   h1 {
     text-align:center;
     color:#E74646;

@@ -4,9 +4,9 @@
 
   </div>
   <div class="cart">
-    <h1 class="panel__content--header item">Shopping Cart <span>{{ counter$ | async }}</span></h1>
+    <h1 class="panel">Shopping Cart <span>{{ counter$ | async }}</span></h1>
     <app-product-cart [data]="cartItems$"></app-product-cart>
-    <p>Total: {{ total$ | async | currency }}</p>
+    <h1 class="total">Total: {{ total$ | async | currency }}</h1>
     <button routerLink="/checkout" class="btn__Checkout" *ngIf="(counter$ | async) !=0">Checkout</button>
   </div>
 </div>
