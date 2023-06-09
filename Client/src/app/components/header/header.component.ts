@@ -10,8 +10,10 @@ import { ProductGridComponent } from '../childrenComponents/mainstore/childrenCo
 export class HeaderComponent {
   public searchTerm: string = '';
   public catTerm: string | undefined;
-
-  constructor(private storeService: StoreService) {}
+  public filterCategory: any;
+  constructor(private storeService: StoreService) {
+   
+  }
 
   search(event: any) {
     this.searchTerm = (event.target as HTMLInputElement).value;
@@ -19,9 +21,17 @@ export class HeaderComponent {
     this.storeService.search.next(this.searchTerm);
   }
 
-  filterCat(event: any) {
-    this.catTerm = (event.target as HTMLInputElement).value;
-    console.log(this.catTerm);
-    this.storeService.search.next(this.catTerm);
+  filter(category: string) {
+    this.filterCategory = this.filterCategory.filter((a: any) => {
+      if (a.category == category || category == '') {
+        return a;
+      }
+    });
   }
+
+  // filterCat(event: any) {
+  //   this.catTerm = (event.target as HTMLInputElement).value;
+  //   console.log(this.catTerm);
+  //   this.storeService.search.next(this.catTerm);
+  // }
 }

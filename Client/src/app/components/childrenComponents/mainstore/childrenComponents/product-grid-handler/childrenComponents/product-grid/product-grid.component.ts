@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, inject } from '@angular/core';
 import { Product } from '../../../../../../../interfaces/product.interface';
 import { StoreService } from '../../../../../../../services/store.service';
 import { Observable, of } from 'rxjs';
@@ -12,6 +12,9 @@ import { APP_SETTINGS } from '../../../../../../../settings/app.settings';
 })
 export class ProductGridComponent {
   @Input() gridproducts$: Observable<Product[]> = of<Product[]>([]);
+  @Input() filterCategory: Observable<Product[]> = of<Product[]>([]);
+  StoreService = inject(StoreService);
+
   itemsPerPage: number = 3;
   p: number = 1;
   searchKey: string = '';

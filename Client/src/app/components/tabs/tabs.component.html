@@ -1,6 +1,13 @@
 <div class="tabs">
     Categories: 
-    <button class="tag-on">All Categories</button>
-    <button class="tag-on">Men</button>
-    <button class="tag-on">Women</button>
+    <button class="tag-on"><a (click)="('')">All Categories</a></button>
+    <button class="tag-on"><a (click)="('men')">Men</a></button>
+    <button class="tag-on"><a (click)="('women')">Women</a></button>
+    <button class="tag-on"><a (click)="('electronics')">Electronics</a></button>
+    <button class="tag-on"><a (click)="('jewelery')">Jewelery</a></button>
 </div>
+<ul>
+  <li *ngFor="let category of suggestedCategories$ | async">
+    {{ category }}
+  </li>
+</ul>

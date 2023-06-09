@@ -1,6 +1,7 @@
 import { Injectable, Inject } from '@angular/core';
 import { ajax } from 'rxjs/ajax';
-import { Observable, BehaviorSubject, map } from 'rxjs';
+import { Observable, BehaviorSubject, combineLatest } from 'rxjs';
+import { map } from 'rxjs/operators';
 import { Product } from '../interfaces/product.interface';
 import { CartItem } from '../interfaces/cart.interface';
 import { APP_SETTINGS } from '../settings/app.settings';
@@ -11,17 +12,52 @@ import { APP_SETTINGS } from '../settings/app.settings';
 export class StoreService {
   private cartItemsSubject = new BehaviorSubject<CartItem[]>([]);
   public search = new BehaviorSubject<string>('');
-  cartItems$ = this.cartItemsSubject.asObservable();
+  cartItems$: Observable<CartItem[]> = this.cartItemsSubject.asObservable();
   products$: Observable<Product[]>;
 
-  total$ = this.cartItems$.pipe(
+  private selectedCategorySubject = new BehaviorSubject<string | null>(null);
+  private categoriesSubject = new BehaviorSubject<string[]>([]);
+  categories$: Observable<string[]> = this.categoriesSubject.asObservable();
+  productsByCategory$: Observable<Product[]>;
+
+  constructor(@Inject(APP_SETTINGS) private appSettings: any) {
+    this.products$ = ajax
+      .getJSON<Product[]>(this.appSettings.dataSourceURL)
+      .pipe(
+        map((products) => {
+          const categories = products.map((product) =>
+            product.category.toLowerCase()
+          );
+          const uniqueCategories = Array.from(new Set(categories));
+          this.categoriesSubject.next(uniqueCategories);
+          return products;
+        })
+      );
+
+    this.productsByCategory$ = combineLatest([
+      this.products$,
+      this.selectedCategorySubject.asObservable(),
+    ]).pipe(
+      map(([products, category]) =>
+        products.filter(
+          (product) => product.category !== category || category == null
+        )
+      )
+    );
+  }
+
+  total$: Observable<number> = this.cartItems$.pipe(
     map((items) =>
       items.reduce((acc, item) => acc + item.product.price * item.quantity, 0)
     )
   );
 
-  constructor(@Inject(APP_SETTINGS) private appSettings: any) {
-    this.products$ = ajax.getJSON<Product[]>(this.appSettings.dataSourceURL);
+  counter$: Observable<number> = this.cartItems$.pipe(
+    map((items) => items.reduce((acc, item) => acc + 1 * item.quantity, 0))
+  );
+
+  selectCategory(category: string): void {
+    this.selectedCategorySubject.next(category);
   }
 
   addItemToCart(product: Product): void {
