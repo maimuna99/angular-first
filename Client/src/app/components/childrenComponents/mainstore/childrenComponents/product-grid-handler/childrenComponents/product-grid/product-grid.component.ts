@@ -15,7 +15,7 @@ export class ProductGridComponent {
   @Input() filterCategory: Observable<Product[]> = of<Product[]>([]);
   StoreService = inject(StoreService);
 
-  itemsPerPage: number = 3;
+  itemsPerPage: number;
   p: number = 1;
   searchKey: string = '';
 

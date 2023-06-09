@@ -5,22 +5,30 @@ import { map } from 'rxjs/operators';
 import { Product } from '../interfaces/product.interface';
 import { CartItem } from '../interfaces/cart.interface';
 import { APP_SETTINGS } from '../settings/app.settings';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root',
 })
 export class StoreService {
+  static getProduct(id: any, number: any) {
+    throw new Error('Method not implemented.');
+  }
+
   private cartItemsSubject = new BehaviorSubject<CartItem[]>([]);
   public search = new BehaviorSubject<string>('');
   cartItems$: Observable<CartItem[]> = this.cartItemsSubject.asObservable();
-  products$: Observable<Product[]>;
+  public products$: Observable<Product[]>;
 
   private selectedCategorySubject = new BehaviorSubject<string | null>(null);
   private categoriesSubject = new BehaviorSubject<string[]>([]);
   categories$: Observable<string[]> = this.categoriesSubject.asObservable();
   productsByCategory$: Observable<Product[]>;
 
-  constructor(@Inject(APP_SETTINGS) private appSettings: any) {
+  constructor(
+    private http: HttpClient,
+    @Inject(APP_SETTINGS) private appSettings: any
+  ) {
     this.products$ = ajax
       .getJSON<Product[]>(this.appSettings.dataSourceURL)
       .pipe(
@@ -46,6 +54,13 @@ export class StoreService {
     );
   }
 
+  getProduct() {
+    return this.http.get<any>('https://fakestoreapi.com/products').pipe(
+      map((res: any) => {
+        return res;
+      })
+    );
+  }
   total$: Observable<number> = this.cartItems$.pipe(
     map((items) =>
       items.reduce((acc, item) => acc + item.product.price * item.quantity, 0)
